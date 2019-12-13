@@ -1,3 +1,4 @@
+/* HEADER */
 .jumbotron {
   background-size: cover;
   background-position: top;
@@ -22,9 +23,13 @@
   font-size: 55px;
   font-family: "Zilla Slab Highlight", cursive;
 }
+
+/* MAIN CONTENT */
 #mainContent {
   background-color: #ddd;
 }
+
+/* SEARCH AND SEARCH HISTORY */
 #searchSidebar {
   border-right: 1px solid #aaa;
   padding: 40px 25px 40px 35px;
@@ -46,6 +51,8 @@
   box-sizing: border-box;
   padding: 3px 10px;
 }
+
+/* WEATHER */
 #weatherCol {
   background-color: #fff;
   padding: 40px;
@@ -67,6 +74,8 @@
   color: #fff;
   font-weight: 600;
 }
+
+/* FOOTER */
 footer {
   background-color: #000;
 }

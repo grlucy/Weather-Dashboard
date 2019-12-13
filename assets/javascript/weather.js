@@ -25,13 +25,20 @@ $(document).ready(function() {
     let queryURL =
       "https://api.openweathermap.org/data/2.5/weather?q=" +
       city +
-      "&units=imperial&appid=" +
+      "&units=imperial&mode=json&appid=" +
       apiKey;
     console.log(queryURL);
     $.ajax({
       url: queryURL,
       method: "GET"
     }).then(function(response) {
+      // Validate search term
+      // console.log(response);
+      // if (response.message === "city not found") {
+      //   alert("City not found.");
+      //   return;
+      // }
+
       // Get the date of the search
       let date = moment().format("L");
 

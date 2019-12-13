@@ -1,5 +1,3 @@
-// API Key: bccd5fad3b0259856da508d996025871
-
 $(document).ready(function() {
   // Declare variables
   const cityInputEl = $("#citySearch");
@@ -19,5 +17,29 @@ $(document).ready(function() {
     console.log(city);
     // clear text input
     cityInputEl.val("");
+    // Search OpenWeather API for city
+    const apiKey = "bccd5fad3b0259856da508d996025871";
+    let queryURL =
+      "https://api.openweathermap.org/data/2.5/weather?q=" +
+      city +
+      "&units=imperial&appid=" +
+      apiKey;
+    console.log(queryURL);
+    $.ajax({
+      url: queryURL,
+      method: "GET"
+    }).then(function(response) {
+      // Populate current weather elements with API response data
+      cityAndDateEl.text(
+        response.name + " " + response.dt + " (Format Date Later)"
+      ); // https://openweathermap.org/weather-data
+      // Add weather icon
+      currentTempEl.text(
+        "Temperature: " + response.main.temp.toFixed(0) + "°F"
+      );
+      currentHumidityEl.text("Humidity: " + response.main.humidity + "%");
+      currentWindEl.text("Wind Speed: " + response.wind.speed + " MPH");
+      // Fill in UV index
+    });
   });
 });

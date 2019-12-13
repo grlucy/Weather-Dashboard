@@ -30,15 +30,12 @@ $(document).ready(function() {
     console.log(queryURL);
     $.ajax({
       url: queryURL,
-      method: "GET"
-    }).then(function(response) {
+      method: "GET",
       // Validate search term
-      // console.log(response);
-      // if (response.message === "city not found") {
-      //   alert("City not found.");
-      //   return;
-      // }
-
+      error: function() {
+        alert("City not found.");
+      }
+    }).then(function(response) {
       // Get the date of the search
       let date = moment().format("L");
 

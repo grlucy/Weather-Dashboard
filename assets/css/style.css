@@ -34,6 +34,7 @@
   border-radius: 8px 0 0 8px;
   box-sizing: border-box;
   width: calc(100% - 40px);
+  padding: 3px 10px;
 }
 #searchBtn {
   width: 40px;
@@ -41,7 +42,9 @@
   border: none;
   background-color: #000;
   color: white;
+  font-weight: 600;
   box-sizing: border-box;
+  padding: 3px 10px;
 }
 #weatherCol {
   background-color: #fff;
@@ -53,6 +56,16 @@
   border-bottom: 1px solid #ddd;
   padding-bottom: 10px;
   margin-bottom: 20px;
+}
+.currentUV,
+#currentUV {
+  display: inline;
+}
+#currentUV {
+  padding: 4px 8px;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: 600;
 }
 footer {
   background-color: #000;

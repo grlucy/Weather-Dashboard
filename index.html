@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Weather Dashboard</title>
+    <!--jQuery CDN-->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.js"
+      integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+      crossorigin="anonymous"
+    ></script>
+    <!--Bootstrap CDN-->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!--Custom CSS-->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <!--Header-->
+    <header>
+      <div class="jumbotron jumbotron-fluid text-center">
+        <div class="container">
+          <h1>Weather Dashboard</h1>
+        </div>
+      </div>
+    </header>
+    <section>
+      <div class="container">
+        <!--Main Content-->
+        <div class="row">
+          <!--Search Bar and Search History-->
+          <div class="col-sm-4">
+            <h4>Search for a city:</h4>
+            <input type="text" name="citySearch" id="citySearch" /><button>
+              Go</button
+            ><br /><br />
+            <div id="cityHistory"></div>
+          </div>
+          <div class="col-sm-8">
+            <div class="row">
+              <div class="col">
+                <h3 id="cityAndDate">City and Date</h3>
+                <p id="currentTemp">Temperature</p>
+                <p id="currentHumidity">Humidity</p>
+                <p id="currentWind">Wind Speed</p>
+                <p id="currentUV">UV Index</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <h3>5-Day Forecast</h3>
+                <div id="forecastDiv"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="./assets/javascript/weather.js"></script>
+  </body>
+</html>

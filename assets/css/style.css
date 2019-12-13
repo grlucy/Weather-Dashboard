@@ -1,11 +1,21 @@
 .jumbotron {
-  /* background-image: url("../images/joshua-reddekopp-7Oq9r2CiTLg-unsplash.jpg"); */
-  background-image: url("../images/noah-silliman-i2J9jnvaAbU-unsplash.jpg");
-  /* background-image: url("../images/scott-webb-3LsocYqXWpM-unsplash.jpg"); */
   background-size: cover;
+  background-position: top;
   margin-bottom: 0;
   box-sizing: border-box;
   min-height: 205px;
+}
+.rain {
+  background-image: url("../images/noah-silliman-i2J9jnvaAbU-unsplash.jpg");
+}
+.cloud {
+  background-image: url("../images/joshua-reddekopp-7Oq9r2CiTLg-unsplash.jpg");
+}
+.clear {
+  background-image: url("../images/scott-webb-3LsocYqXWpM-unsplash.jpg");
+}
+.snow {
+  background-image: url("../images/upstate-new-york-oJOUzfDzs14-unsplash.jpg");
 }
 .jumbotron h1 {
   color: black;

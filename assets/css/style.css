@@ -1,0 +1,52 @@
+.jumbotron {
+  /* background-image: url("../images/joshua-reddekopp-7Oq9r2CiTLg-unsplash.jpg"); */
+  background-image: url("../images/noah-silliman-i2J9jnvaAbU-unsplash.jpg");
+  /* background-image: url("../images/scott-webb-3LsocYqXWpM-unsplash.jpg"); */
+  background-size: cover;
+  margin-bottom: 0;
+  box-sizing: border-box;
+  min-height: 205px;
+}
+.jumbotron h1 {
+  color: black;
+  font-size: 55px;
+  font-family: "Zilla Slab Highlight", cursive;
+}
+#mainContent {
+  background-color: #ddd;
+}
+#searchSidebar {
+  border-right: 1px solid #aaa;
+  padding: 40px 25px 40px 35px;
+}
+#searchSidebar input {
+  border: none;
+  border-radius: 8px 0 0 8px;
+  box-sizing: border-box;
+  width: calc(100% - 40px);
+}
+#searchBtn {
+  width: 40px;
+  border-radius: 0 8px 8px 0;
+  border: none;
+  background-color: #000;
+  color: white;
+  box-sizing: border-box;
+}
+#weatherCol {
+  background-color: #fff;
+  padding: 40px;
+  box-sizing: border-box;
+  min-height: calc(100vh - 205px - 45px);
+}
+footer {
+  background-color: #000;
+}
+.footerCol {
+  box-sizing: border-box;
+  height: 45px;
+}
+.footerCol p {
+  color: white;
+  margin: 0;
+}

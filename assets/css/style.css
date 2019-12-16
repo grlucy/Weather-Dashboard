@@ -46,10 +46,24 @@
   border-radius: 0 8px 8px 0;
   border: none;
   background-color: #000;
-  color: white;
+  color: #fff;
   font-weight: 600;
   box-sizing: border-box;
   padding: 3px 10px;
+}
+#cityHistory {
+  overflow: auto;
+  height: calc(100vh - 205px - 45px - 166px);
+}
+.cityHistory {
+  display: block;
+  width: 100%;
+  border-radius: 8px;
+  background-color: #eee;
+  padding: 3px 10px;
+  color: #000;
+  text-transform: capitalize;
+  margin-bottom: 8px;
 }
 
 /* WEATHER */
@@ -86,4 +100,11 @@ footer {
 .footerCol p {
   color: white;
   margin: 0;
+}
+
+/* MEDIA QUERIES */
+@media only screen and (max-width: 575px) {
+  #cityHistory {
+    height: 110px;
+  }
 }

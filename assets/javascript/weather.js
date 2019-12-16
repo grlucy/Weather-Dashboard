@@ -1,15 +1,4 @@
 $(document).ready(function() {
-  // Declare variables
-  const cityInputEl = $("#citySearch");
-  const searchBtn = $("#searchBtn");
-  const searchHistoryDiv = $("#cityHistory");
-  const cityAndDateEl = $("#cityAndDate");
-  const currentTempEl = $("#currentTemp");
-  const currentHumidityEl = $("#currentHumidity");
-  const currentWindEl = $("#currentWind");
-  const currentUVEl = $("#currentUV");
-  const apiKey = "bccd5fad3b0259856da508d996025871";
-
   // Add click event to search button
   searchBtn.on("click", function() {
     event.preventDefault();
@@ -17,9 +6,6 @@ $(document).ready(function() {
     // Get city from text input
     city = cityInputEl.val();
     console.log(city);
-
-    // Save city to localStorage
-    saveCity(city);
 
     // clear text input
     cityInputEl.val("");
@@ -39,6 +25,10 @@ $(document).ready(function() {
         alert("City not found.");
       }
     }).then(function(response) {
+      // Save city to localStorage and update search history div
+      saveCity(city);
+      createSearchButtons();
+
       // Get the date of the search
       let date = moment().format("L");
 

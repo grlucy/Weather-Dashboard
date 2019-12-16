@@ -15,10 +15,9 @@ let cityArray = [];
 // Create function to save city to localStorage
 function saveCity() {
   // Get search history from localStorage
-  if (cityArray[0] === undefined) {
+  cityArray = JSON.parse(localStorage.getItem("cityHistory"));
+  if (cityArray === null) {
     cityArray = [];
-  } else {
-    cityArray = JSON.parse(localStorage.getItem("cityHistory"));
   }
   // Push most recent city searched to cityArray
   cityArray.push(city);
@@ -30,15 +29,18 @@ function saveCity() {
 function createSearchButtons() {
   // Clear existing search history buttons
   searchHistoryDiv.empty();
+  cityArray = JSON.parse(localStorage.getItem("cityHistory"));
   // Populate new search history buttons
-  for (let i = 0; i < cityArray.length; i++) {
-    let newCityButton = $("<div>").addClass("cityHistory");
-    newCityButton.text(cityArray[i]);
-    searchHistoryDiv.prepend(newCityButton);
+  if (cityArray !== null) {
+    for (let i = 0; i < cityArray.length; i++) {
+      let newCityButton = $("<div>").addClass("cityHistory");
+      newCityButton.text(cityArray[i]);
+      searchHistoryDiv.prepend(newCityButton);
+    }
+    // Create click event for search history buttons
+    $(".cityHistory").on("click", function() {
+      city = $(this).text();
+      getWeather(city);
+    });
   }
-  // Create click event for search history buttons
-  $(".cityHistory").on("click", function() {
-    city = $(this).text();
-    getWeather(city);
-  });
 }

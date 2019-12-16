@@ -9,4 +9,9 @@ $(document).ready(function() {
     // get weather for city entered in search bar
     getWeather(city);
   }); // end of search button click event
+
+  function init() {
+    createSearchButtons();
+  }
+  init();
 }); // end of document ready function

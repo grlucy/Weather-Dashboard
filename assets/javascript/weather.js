@@ -13,9 +13,11 @@ function getWeather() {
       alert("City not found.");
     }
   }).then(function(response) {
-    // Save city to localStorage and update search history div
-    saveCity(city);
-    createSearchButtons();
+    if (clickStatus === true) {
+      // Will not add city to local storage or create search history button if getWeather was called by initial page load
+      saveCity(city);
+      createSearchButtons();
+    }
 
     // Get the date of the search
     let date = moment.unix(response.dt).format("MM/DD/YYYY");

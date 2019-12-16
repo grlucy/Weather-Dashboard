@@ -11,6 +11,7 @@ const forecastDiv = $("#forecastDiv");
 const apiKey = "bccd5fad3b0259856da508d996025871";
 let city;
 let cityArray = [];
+let clickStatus = false;
 
 // Create function to save city to localStorage
 function saveCity() {
@@ -40,7 +41,10 @@ function createSearchButtons() {
     // Create click event for search history buttons
     $(".cityHistory").on("click", function() {
       city = $(this).text();
+      clickStatus = true;
       getWeather(city);
+      // saveCity(city);
+      // createSearchButtons();
     });
   }
 }

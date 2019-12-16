@@ -7,11 +7,20 @@ $(document).ready(function() {
     // clear text input
     cityInputEl.val("");
     // get weather for city entered in search bar
+    clickStatus = true;
     getWeather(city);
   }); // end of search button click event
 
   function init() {
+    clickStatus = false;
     createSearchButtons();
+    cityArray = JSON.parse(localStorage.getItem("cityHistory"));
+    if (cityArray !== null) {
+      city = cityArray[cityArray.length - 1];
+      getWeather(city);
+    } else {
+      // Geolocation
+    }
   }
   init();
 }); // end of document ready function

@@ -64,6 +64,7 @@
   color: #000;
   text-transform: capitalize;
   margin-bottom: 8px;
+  cursor: pointer;
 }
 
 /* WEATHER */

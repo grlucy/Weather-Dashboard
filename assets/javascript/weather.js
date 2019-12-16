@@ -8,20 +8,23 @@ $(document).ready(function() {
   const currentHumidityEl = $("#currentHumidity");
   const currentWindEl = $("#currentWind");
   const currentUVEl = $("#currentUV");
+  const apiKey = "bccd5fad3b0259856da508d996025871";
 
   // Add click event to search button
   searchBtn.on("click", function() {
     event.preventDefault();
 
     // Get city from text input
-    let city = cityInputEl.val();
+    city = cityInputEl.val();
     console.log(city);
+
+    // Save city to localStorage
+    saveCity(city);
 
     // clear text input
     cityInputEl.val("");
 
-    // Search OpenWeather API for city
-    const apiKey = "bccd5fad3b0259856da508d996025871";
+    // Search OpenWeather API for current weather for city
     let queryURL =
       "https://api.openweathermap.org/data/2.5/weather?q=" +
       city +
@@ -102,6 +105,17 @@ $(document).ready(function() {
           currentUVEl.css("background-color", "red");
         }
       });
+    }); // End of current weather API call
+
+    // 5-DAY FORECAST
+
+    // Create 5-day forecast API call
+    let forecastURL = `http://api.openweathermap.org/data/2.5/forecast?q=${city}&units=imperial&mode=json&appid=${apiKey}`;
+    $.ajax({
+      url: forecastURL,
+      method: "GET"
+    }).then(function(resp) {
+      console.log(`forecastURL = ${forecastURL}`);
     });
-  });
-});
+  }); // end of search button click event
+}); // end of document ready function

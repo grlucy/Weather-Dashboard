@@ -19,6 +19,8 @@ $(document).ready(function() {
       city = cityArray[cityArray.length - 1];
       getWeather(city);
     } else {
+      city = "Richmond";
+      getWeather(city);
       // Geolocation
     }
   }

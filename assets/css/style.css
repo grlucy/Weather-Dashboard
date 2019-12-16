@@ -89,6 +89,22 @@
   color: #fff;
   font-weight: 600;
 }
+#forecastDiv {
+  display: flex;
+  flex-wrap: wrap;
+}
+#forecastDiv h6 {
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+.innerForecastDiv {
+  border: 2px solid #ddd;
+  border-radius: 15px;
+  padding: 20px;
+  margin: 15px 15px 0 0;
+  text-align: center;
+  min-width: 175px;
+}
 
 /* FOOTER */
 footer {
@@ -106,6 +122,7 @@ footer {
 /* MEDIA QUERIES */
 @media only screen and (max-width: 575px) {
   #cityHistory {
-    height: 110px;
+    height: auto;
+    max-height: 110px;
   }
 }

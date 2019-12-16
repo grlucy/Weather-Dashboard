@@ -7,6 +7,7 @@ const currentTempEl = $("#currentTemp");
 const currentHumidityEl = $("#currentHumidity");
 const currentWindEl = $("#currentWind");
 const currentUVEl = $("#currentUV");
+const forecastDiv = $("#forecastDiv");
 const apiKey = "bccd5fad3b0259856da508d996025871";
 let city;
 let cityArray = [];

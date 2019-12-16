@@ -5,7 +5,6 @@ function getWeather() {
     city +
     "&units=imperial&mode=json&appid=" +
     apiKey;
-  console.log(queryURL);
   $.ajax({
     url: queryURL,
     method: "GET",
@@ -19,7 +18,7 @@ function getWeather() {
     createSearchButtons();
 
     // Get the date of the search
-    let date = moment().format("L");
+    let date = moment.unix(response.dt).format("MM/DD/YYYY");
 
     // Populate current weather elements with API response data (see https://openweathermap.org/weather-data)
     cityAndDateEl.text(response.name + " (" + date + ")");
@@ -63,7 +62,6 @@ function getWeather() {
 
     // Create UVI API call
     let urlUVI = `http://api.openweathermap.org/data/2.5/uvi?appid=${apiKey}&lat=${lat}&lon=${lon}`;
-    console.log(urlUVI);
     $.ajax({
       url: urlUVI,
       method: "GET"
@@ -92,6 +90,28 @@ function getWeather() {
     url: forecastURL,
     method: "GET"
   }).then(function(resp) {
-    console.log(`forecastURL = ${forecastURL}`);
+    // Clear prior forecast
+    forecastDiv.empty();
+    // Append new elements to page for each forecast day
+    for (let i = 7; i < resp.list.length; i += 8) {
+      let forecastDate = moment.unix(resp.list[i].dt).format("MM/DD/YYYY");
+      let newForecastDiv = $("<div>").addClass("innerForecastDiv");
+      let newForecastDateEl = $("<h6>").text(forecastDate);
+      newForecastDiv.append(newForecastDateEl);
+      newForecastDiv.append(
+        $(
+          '<img src="http://openweathermap.org/img/wn/' +
+            resp.list[i].weather[0].icon +
+            '.png">'
+        )
+      );
+      newForecastDiv.append(
+        $("<p>").text(resp.list[i].main.temp.toFixed(0) + "°F")
+      );
+      newForecastDiv.append(
+        $("<p>").text(resp.list[i].main.humidity + "% humidity")
+      );
+      forecastDiv.append(newForecastDiv);
+    }
   });
 }

@@ -63,7 +63,7 @@ function getWeather() {
     let lon = response.coord.lon;
 
     // Create UVI API call
-    let urlUVI = `http://api.openweathermap.org/data/2.5/uvi?appid=${apiKey}&lat=${lat}&lon=${lon}`;
+    let urlUVI = `https://api.openweathermap.org/data/2.5/uvi?appid=${apiKey}&lat=${lat}&lon=${lon}`;
     $.ajax({
       url: urlUVI,
       method: "GET"
@@ -87,7 +87,7 @@ function getWeather() {
   // 5-DAY FORECAST
 
   // Create 5-day forecast API call
-  let forecastURL = `http://api.openweathermap.org/data/2.5/forecast?q=${city}&units=imperial&mode=json&appid=${apiKey}`;
+  let forecastURL = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=imperial&mode=json&appid=${apiKey}`;
   $.ajax({
     url: forecastURL,
     method: "GET"

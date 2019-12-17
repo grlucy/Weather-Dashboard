@@ -15,7 +15,7 @@ In building this weather dashboard, I learned about using the OpenWeather API an
 
 ## Usage
 
-The first time a user loads the application, they will be asked to confirm geolocation services. If they accept, the weather dashboard displays weather for their current location and adds their current location to search history. If they do not accept, the dashboard defaults to Richmond.
+The first time a user loads the application, they will be asked to confirm geolocation services. If they accept, the weather dashboard displays weather for their current location and adds their current location to search history. If they do not accept, the dashboard defaults to University of Richmond's coordinates.
 
 The user is then able to search for other cities, and the current weather and 5-day forecast for those cities appears to the right. Every time the user searches for a city, a clickable button will be added to search history to serve as a convenient shortcut.
 

@@ -20,7 +20,10 @@ function getWeather() {
     }
 
     // Get the date of the search
-    let date = moment.unix(response.dt).format("MM/DD/YYYY");
+    let date = moment
+      .unix(response.dt)
+      .utcOffset(response.timezone / 60 / 60)
+      .format("MM/DD/YYYY");
 
     // Populate current weather elements with API response data (see https://openweathermap.org/weather-data)
     cityAndDateEl.text(response.name + " (" + date + ")");
@@ -96,7 +99,10 @@ function getWeather() {
     forecastDiv.empty();
     // Append new elements to page for each forecast day
     for (let i = 7; i < resp.list.length; i += 8) {
-      let forecastDate = moment.unix(resp.list[i].dt).format("MM/DD/YYYY");
+      let forecastDate = moment
+        .unix(resp.list[i].dt)
+        .utcOffset(resp.city.timezone / 60 / 60)
+        .format("MM/DD/YYYY");
       let newForecastDiv = $("<div>").addClass("innerForecastDiv");
       let newForecastDateEl = $("<h6>").text(forecastDate);
       newForecastDiv.append(newForecastDateEl);

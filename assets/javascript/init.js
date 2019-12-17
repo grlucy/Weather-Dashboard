@@ -15,16 +15,26 @@ $(document).ready(function() {
     clickStatus = false;
     createSearchButtons();
     cityArray = JSON.parse(localStorage.getItem("cityHistory"));
+    // If there is an existing search history, default to the most recently searched city on page load
     if (cityArray !== null) {
       city = cityArray[cityArray.length - 1];
       getWeather(city);
     } else {
-      city = "Richmond";
-      getWeather(city);
-      // Geolocation
+      // Default to University of Richmond coordinates
+      const lati = 37.57782;
+      const longi = -77.535657;
+      let universityURL = `https://api.openweathermap.org/data/2.5/weather?lat=${lati}&lon=${longi}&units=imperial&mode=json&appid=${apiKey}`;
+      $.ajax({
+        url: universityURL,
+        method: "GET"
+      }).then(function(re) {
+        city = re.name;
+        getWeather(city);
+      });
       if (!navigator.geolocation) {
         return;
       } else {
+        // If user does allow geolocation, attempt to get their coordinates and then run weather search for their city
         navigator.geolocation.getCurrentPosition(success, error);
       }
     }

@@ -26,7 +26,7 @@ function getWeather() {
     cityAndDateEl.text(response.name + " (" + date + ")");
     cityAndDateEl.append(
       $(
-        '<img src="http://openweathermap.org/img/wn/' +
+        '<img src="https://openweathermap.org/img/wn/' +
           response.weather[0].icon +
           '.png">'
       )
@@ -102,7 +102,7 @@ function getWeather() {
       newForecastDiv.append(newForecastDateEl);
       newForecastDiv.append(
         $(
-          '<img src="http://openweathermap.org/img/wn/' +
+          '<img src="https://openweathermap.org/img/wn/' +
             resp.list[i].weather[0].icon +
             '.png">'
         )

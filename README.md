@@ -2,11 +2,17 @@
 
 ## Description
 
-This is the site I made for the University of Richmond Bootcamp Homework #6: Weather Dashboard assignment. I used HTML, Git, CSS, Bootstrap, JavaScript, jQuery, Moment.js, the OpenWeather API, and the Geolocation API to develop a weather dashboard. I made this site fully responsive through Bootstrap and media queries. It is deployed on Github Pages at: https://grlucy.github.io/Weather-Dashboard/
+A weather dashboard that provides current conditions, 5-day forecast, and search history. I made this site fully responsive through Bootstrap and media queries. It is deployed on Github Pages at: https://grlucy.github.io/Weather-Dashboard/
 
 This web browser application is intended for monitoring current weather conditions and looking up weather forecasts in different cities. Geolocation also provides weather in the user's current location. A search history feature enables the user to click on convenient buttons for cities they have previously searched.
 
-In building this weather dashboard, I learned about using the OpenWeather API and the Geolocation API. I also learned how to use Moment.js to format timestamps from an API.
+Technologies used:
+
+> HTML, Git, CSS, Bootstrap, JavaScript, jQuery, Moment.js, the OpenWeather API, and the Geolocation API
+
+## Demo
+
+![Weather Dashboard gif](/assets/screenshots/Weather-Dashboard-demo.gif)
 
 ## UI
 
@@ -28,7 +34,7 @@ The user is then able to search for other cities, and the current weather and 5-
 
 ## License
 
-Copyright (c) 2019 Gina Lucy
+Copyright (c) 2020 Gina Lucy
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
